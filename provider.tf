@@ -11,3 +11,12 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
+
+terraform { 
+  cloud {   
+    organization = "GUBIHOME" 
+    workspaces { 
+      name = "gitauction" 
+    } 
+  } 
+}
