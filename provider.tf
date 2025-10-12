@@ -13,10 +13,12 @@ provider "aws" {
 }
 
 terraform { 
-  cloud {   
-    organization = "GUBIHOME" 
+  cloud { 
+    
+    organization = "gubi" 
+
     workspaces { 
-      name = "gitauction" 
+      name = "gitaction" 
     } 
   } 
 }
