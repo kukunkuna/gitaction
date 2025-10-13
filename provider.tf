@@ -6,9 +6,7 @@ provider "aws" {
 
 terraform { 
   cloud { 
-    
     organization = "gubi" 
-
     workspaces { 
       name = "gitaction" 
     } 
