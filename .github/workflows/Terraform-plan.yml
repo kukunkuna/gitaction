@@ -58,8 +58,8 @@ jobs:
     runs-on: ubuntu-latest
    # environment: production
     env:
-      Access_key_ID: ${{ secrets.Access_key_ID }}
-      Secret_access_key: ${{ secrets.Secret_access_key }}
+      Access_key_ID: ${{ secrets.AWS_Access_key_ID }}
+      Secret_access_key: ${{ secrets.AWS_Secret_access_key }}
       AWS_Region: us-east-1
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
