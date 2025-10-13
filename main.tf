@@ -1,7 +1,15 @@
-resource "aws_instance" "ec2_server" {
-  ami           = "ami-052064a798f08f0d3
-  instance_type = "t2.micro"
+# Specify the provider
+provider "aws" {
+  region = "us-east-1"  # change to your desired region
+}
+
+# Create an S3 bucket
+resource "aws_s3_bucket" "gitauction" {
+  bucket = "gitauction"  # must be globally unique
+  acl    = "private"
+
   tags = {
-    Name = "gitacution"
+    Name        = "MyBucket"
+    Environment = "Dev"
   }
 }
