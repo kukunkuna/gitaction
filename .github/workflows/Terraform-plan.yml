@@ -1,4 +1,4 @@
-name: Terraform CI
+name: Terraform Deploy
 
 on:
   push:
@@ -11,7 +11,8 @@ jobs:
 
     env:
       # Terraform Cloud token (set as a GitHub secret)
-      TERRAFORM_CLOUD_TOKEN: ${{ secrets.TF_DEMO_API_TOKEN }}
+      TERRAFORM_CLOUD_TOKEN: ${{ secrets.TF_API_TOKEN }}
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
