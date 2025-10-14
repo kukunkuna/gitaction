@@ -1,10 +1,10 @@
 # Configure the AWS Provider
 terraform {
- cloud { 
-    organization = "gubi" 
-    workspaces { 
+  cloud {
+    organization = "gubi"
+    workspaces {
       name = "gitaction"
-      }
+    }
   }
 
   required_providers {
