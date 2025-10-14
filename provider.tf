@@ -1,8 +1,4 @@
 # Configure the AWS Provider
-provider "aws" {
-  skip_metadata_api_check = true
-  region                  = "us-east-1"
-}
 
 terraform { 
   cloud { 
@@ -11,4 +7,16 @@ terraform {
       name = "gitaction" 
     } 
   } 
+}
+
+providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = "us-east-1"
 }
