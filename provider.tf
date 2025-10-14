@@ -1,5 +1,4 @@
 # Configure the AWS Provider
-
 terraform {
  cloud { 
     organization = "gubi" 
