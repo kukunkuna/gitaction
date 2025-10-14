@@ -1,0 +1,16 @@
+# Sentinel policy: restrict AWS EC2 instance types to only t2.micro
+# Applies to resources of type aws_instance (including those created inside modules)
+
+import "tfplan/v2" as tfplan
+
+allowed = ["t2.micro"]
+
+# Collect all aws_instance resource changes in the plan
+instances = [r for r in tfplan.resource_changes if r.type == "aws_instance"]
+
+main = rule {
+  all instances as r {
+    # If the planned action is a delete, allow it. Otherwise require allowed instance type.
+    (r.change.actions contains "delete") or (r.change.after is not null and r.change.after.instance_type in allowed)
+  }
+}
