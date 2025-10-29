@@ -23,3 +23,27 @@ module "ec2_my_instance" {
     Environment = "demo"
   }
 }
+
+module "instance_profile" {
+  source = "./modules/instance_profile"
+
+  name = "my-instance-profile"
+  policies = ["arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"]
+
+  tags = {
+    Name = "MyInstanceProfile"
+    Environment = "demo"
+  }
+}
+
+module "kms_key" {
+  source = "./modules/kms"
+
+  alias       = "my-kms-key"
+  description = "KMS key for EC2 instance encryption"
+
+  tags = {
+    Name        = "MyKMSKey"
+    Environment = "demo"
+  }
+}
