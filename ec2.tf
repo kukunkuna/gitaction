@@ -17,24 +17,24 @@ module "ec2_my_instance" {
   key_name             = null
   ebs_root_volume_size = 8
   kms_key_arn           = module.kms_key.key_arn
-  iam_instance_profile_name = module.instance_profile.instance_profile_name
+  #iam_instance_profile_name = module.instance_profile.instance_profile_name
   tags = {
     Name = "MyEC2Instance"
     Environment = "demo"
   }
 }
 
-module "instance_profile" {
-  source = "./modules/instance_profile"
+# module "instance_profile" {
+#  source = "./modules/instance_profile"
 
-  name = "my-instance-profile"
+ # name = "my-instance-profile"
  # policies = ["arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"]
 
-  tags = {
-    Name = "MyInstanceProfile"
-    Environment = "demo"
-  }
-}
+ # tags = {
+ #   Name = "MyInstanceProfile"
+ #   Environment = "demo"
+ # }
+ # }
 
 module "kms_key" {
   source = "./modules/kms"
