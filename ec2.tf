@@ -28,7 +28,7 @@ module "instance_profile" {
   source = "./modules/instance_profile"
 
   name = "my-instance-profile"
-  policies = ["arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"]
+ # policies = ["arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"]
 
   tags = {
     Name = "MyInstanceProfile"
