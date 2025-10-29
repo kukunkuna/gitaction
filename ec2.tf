@@ -16,6 +16,8 @@ module "ec2_my_instance" {
   assign_public_ip     = false
   key_name             = null
   ebs_root_volume_size = 8
+  kms_key_arn           = module.kms_key.key_arn
+  iam_instance_profile_name = module.instance_profile.instance_profile_name
   tags = {
     Name = "MyEC2Instance"
     Environment = "demo"

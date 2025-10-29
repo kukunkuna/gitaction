@@ -79,3 +79,9 @@ variable "kms_key_arn" {
   description = "ARN of the KMS key to use for encrypting the root volume. This is now mandatory."
   type        = string
 }
+
+variable "iam_instance_profile_name" {
+  description = "Name of the IAM instance profile to attach to the EC2 instance"
+  type        = string
+  default     = null
+}

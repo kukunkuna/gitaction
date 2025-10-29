@@ -22,3 +22,8 @@ output "iam_instance_profile_name" {
   description = "Instance profile name created for SSM (if enable_ssm = true)"
   value       = length(aws_iam_instance_profile.this) > 0 ? aws_iam_instance_profile.this[0].name : null
 }
+
+output "kms_key_arn" {
+  description = "ARN of the KMS key used for encrypting the root volume"
+  value       = var.kms_key_arn
+}

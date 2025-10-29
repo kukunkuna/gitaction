@@ -58,7 +58,7 @@ resource "aws_instance" "this" {
     kms_key_id  = var.kms_key_arn
   }
   # Attach instance profile if the module created one for SSM
-  iam_instance_profile = length(aws_iam_instance_profile.this) > 0 ? aws_iam_instance_profile.this[0].name : null
+  iam_instance_profile = var.iam_instance_profile_name
 
   tags = merge(var.tags, { Name = "${var.name}-${count.index + 1}" })
 }
