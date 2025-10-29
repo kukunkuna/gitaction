@@ -76,7 +76,6 @@ variable "tags" {
 }
 
 variable "kms_key_arn" {
-  description = "ARN of the KMS key to use for encrypting the root volume. Leave null to use the default AWS-managed key."
+  description = "ARN of the KMS key to use for encrypting the root volume. This is now mandatory."
   type        = string
-  default     = null
 }
