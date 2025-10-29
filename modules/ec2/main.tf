@@ -54,6 +54,8 @@ resource "aws_instance" "this" {
   root_block_device {
     volume_size = var.ebs_root_volume_size
     volume_type = "gp3"
+    encrypted   = true
+    kms_key_id  = var.kms_key_arn
   }
   # Attach instance profile if the module created one for SSM
   iam_instance_profile = length(aws_iam_instance_profile.this) > 0 ? aws_iam_instance_profile.this[0].name : null

@@ -74,3 +74,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "kms_key_arn" {
+  description = "ARN of the KMS key to use for encrypting the root volume. Leave null to use the default AWS-managed key."
+  type        = string
+  default     = null
+}

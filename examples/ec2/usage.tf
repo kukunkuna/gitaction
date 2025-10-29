@@ -24,4 +24,5 @@ module "example_ec2" {
   tags = {
     Environment = "demo"
   }
+  kms_key_arn = module.kms_key.key_arn
 }

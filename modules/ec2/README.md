@@ -30,6 +30,7 @@ Inputs
 - `enable_ssm` - whether to create an IAM role and instance profile and enable SSM (recommended instead of opening SSH)
 - `ebs_root_volume_size` - root EBS size in GiB
 - `tags` - map of tags applied to resources
+- `kms_key_arn` - ARN of the KMS key to use for encrypting the root volume. This is now mandatory.
 
 Outputs
 
